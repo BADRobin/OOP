@@ -1,12 +1,11 @@
 package com.company.list;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ToDoList {
 
 //    Создание переменной
-    private List<String> toDoList = new ArrayList<>();
+    private ArrayList<String> toDoList = new ArrayList<>();
 
 //  Добавляет метод|элемент в List
     public void addToList(String task) {
@@ -36,7 +35,7 @@ public class ToDoList {
     }
 
 //  Получет индекс/значение определенной задачи
-    public void getTaskPriority(String task) {
-        toDoList.indexOf(task);
+    public int getTaskPriority(String task) {
+        return toDoList.indexOf(task);
     }
 }
