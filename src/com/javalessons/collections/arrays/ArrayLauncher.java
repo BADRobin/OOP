@@ -1,5 +1,6 @@
 package com.javalessons.collections.arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayLauncher {
@@ -19,11 +20,25 @@ private  static Scanner scanner = new Scanner(System.in);
         for (int j=0; j< myArray.length; j++){
             System.out.println("Следующий элемент: ");
             myArray[j] = scanner.nextInt();
-
+//            System.out.println(findMultiples());
         }
 //        for (int i=0; i<6; i++) {
         for (int i=0; i<myArray.length; i++) {
             System.out.println("Element " + i + "= " +  myArray[i]);
         }
     }
+
+
+
+//    public static int[] findMultiples() {
+//        int x = 3;
+//        int n = 4;
+//        int[] arr = new int[x];
+//        int num = 1;
+//        for (int i = 0; i < x; i++) {
+//            arr[i] = n * num;
+//            num++;
+//        }
+//        return arr;
+//    }
 }

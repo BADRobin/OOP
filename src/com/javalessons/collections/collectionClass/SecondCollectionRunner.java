@@ -1,4 +1,4 @@
-package com.javalessons.collections.collrctionClass;
+package com.javalessons.collections.collectionClass;
 
 import java.util.*;
 
