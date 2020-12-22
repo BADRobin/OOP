@@ -8,12 +8,6 @@ public class DoWhile {
         int month = 0;
         double interestRate = 0.006;
 
-//        while (currentBalance < finalBalance){
-//            currentBalance += payment;
-//            currentBalance = currentBalance + currentBalance* interestRate;
-//            years ++;
-//            System.out.println("Years " + years+ " - " + currentBalance);
-//        }
         do {
             currentBalance += payment;
             currentBalance = currentBalance + currentBalance * interestRate;
