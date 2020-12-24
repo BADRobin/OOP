@@ -56,5 +56,10 @@ public class CarSecond implements Comparable<CarSecond> {
         }
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return carBrand + " " + model + " " + pricePerDay;
+    }
 }
 
