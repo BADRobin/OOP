@@ -27,13 +27,16 @@ public class MapLauncherSecond {
     }
 
     private static void printSet(NavigableSet<WordWrapper> wordWrappers) {
-        System.out.println();
+        for (WordWrapper wordWrapper: wordWrappers);
+        System.out.println(wordWrappers);
     }
 
     private static NavigableSet<WordWrapper> convertToSet(Map<String, Integer> wordMap) {
+        wordMap.remove("you");
+        wordMap.replace("long", 0);
         NavigableSet<WordWrapper> wordSet = new TreeSet<>();
         for (Map.Entry<String, Integer> e : wordMap.entrySet()) {
-            wordSet.add(new WordWrapper(e.getKey(), e.getValue()));
+            wordSet.add(new WordWrapper( e.getKey(), e.getValue()));
         }
         return wordSet;
     }
