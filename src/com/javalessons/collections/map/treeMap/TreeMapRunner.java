@@ -5,7 +5,8 @@ import java.util.*;
 public class TreeMapRunner {
     public static void main(String[] args) {
         NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades = createGrades();
-        printGrades(grades, true);
+        printGrades(grades, false);
+//        printGrades(grades, true);
     }
     private static void printGrades(Map<AverageStudentGrade, Set<SubjectGrade>> grades, boolean printValue){
         Set<AverageStudentGrade> averageGrades = grades.keySet();
