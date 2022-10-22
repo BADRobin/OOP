@@ -1,4 +1,4 @@
-package com.javalessons.collections.map;
+package com.javalessons.collections.map.hashMap;
 
 import java.util.*;
 
