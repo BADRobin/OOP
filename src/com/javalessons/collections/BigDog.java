@@ -1,6 +1,6 @@
 //package com.javalessons.as;
 //
-//import com.javalessons.oop.Dog;
+//import com.javalessons.firststep.oop.Dog;
 //
 //public class BigDog extends Dog {
 //
