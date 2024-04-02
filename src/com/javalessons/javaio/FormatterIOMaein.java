@@ -4,27 +4,39 @@ import com.javalessons.collections.map.treeMap.AverageStudentGrade;
 import com.javalessons.collections.map.treeMap.SubjectGrade;
 import com.javalessons.collections.map.treeMap.TreeMapRunner;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.NavigableMap;
-import java.util.Set;
+import java.io.*;
+import java.util.*;
 
-public class ThirdIOMain {
+public class FormatterIOMaein {
+
     private static final String FILE_NAME = "GradeBook.txt";
 
     public static void main(String[] args) throws IOException {
         NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades = TreeMapRunner.createGrades();
-        writeFile(grades);
+//        writeFile(grades);
+//        readFile();
+        Formatter formatter = new Formatter("BankAccount");
+        System.out.println("Please enter Client ID, Client Name, Client Surname and account balance");
+        Scanner scanner = new Scanner(System.in);
 
-//        FileReader reader = new FileReader(FILE_NAME);
+        int i = 0;
+        while (i < 3) {
+            try {
+
+
+                formatter.format("%d, %s, %s, %.2f%n", scanner.nextInt(), scanner.next(), scanner.next(), scanner.nextFloat());
+                i++;
+            } catch (InputMismatchException e){
+                System.out.println("Input incorrect. Please try again ");
+                scanner.nextLine();
+            }
+        }
+        formatter.close();
+    }
+
+    private static void readFile() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
-//        Only for FileReader
-//        int c;
-//        while ((c = reader.read()) != -1) {
-//            System.out.println(c);
-//        }
+
         String c;
         while ((c = reader.readLine()) != null) {
             System.out.println(c);
@@ -32,9 +44,7 @@ public class ThirdIOMain {
     }
 
     private static void writeFile(NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades) throws IOException {
-
-        try (FileWriter writer = new FileWriter(FILE_NAME)) {
-
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
             for (AverageStudentGrade gradeKey : grades.keySet()) {
                 writer.write("-----------------------------\n");
                 writer.write("Student: " + gradeKey.getName() + "," + " Average Grade: " + gradeKey.getAverageGrade() + " \n");
@@ -46,4 +56,8 @@ public class ThirdIOMain {
         }
     }
 }
+
+
+
+
 
