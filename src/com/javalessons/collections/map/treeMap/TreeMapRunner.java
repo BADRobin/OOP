@@ -15,11 +15,13 @@ public class TreeMapRunner {
         System.out.println("Scholarship Students");
 //        printGrades(scholarshipStudents, false);
         printGrades(scholarshipStudents.descendingMap(), false);
+        System.out.println("========================================");
         System.out.println("Contender student");
         AverageStudentGrade contender = grades.lowerKey(border);
         System.out.println(contender);
+        System.out.println("========================================");
         System.out.println("Highest grate student");
-        System.out.println(scholarshipStudents.descendingMap().firstEntry());
+        System.out.println(scholarshipStudents.descendingMap().firstEntry() );
     }
     private static void printGrades(Map<AverageStudentGrade, Set<SubjectGrade>> grades, boolean printValue){
         Set<AverageStudentGrade> averageGrades = grades.keySet();
