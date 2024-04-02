@@ -13,19 +13,26 @@ public class IOMain {
 
     public static void main(String[] args) {
         NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades = TreeMapRunner.createGrades();
+        FileWriter writer = null;
         try {
-            FileWriter writer = new FileWriter("GradeBook");
+            writer = new FileWriter("GradeBook");
             for (AverageStudentGrade gradeKey : grades.keySet()) {
                 writer.write("-----------------------------\n");
-                writer.write("Student: " + gradeKey.getName() + " Average Grade: " + gradeKey.getAverageGrade() + "\n");
+                writer.write("Student: " + gradeKey.getName() +","+ " Average Grade: " + gradeKey.getAverageGrade() + " \n");
                 for (SubjectGrade grade : grades.get(gradeKey)) {
 
-                    writer.write("Subject: " + grade.getSubject() + " Grade: " + grade.getGrade() + "\n");
+                    writer.write("Subject: " + grade.getSubject() +","+ " Grade: " + grade.getGrade() + " \n");
 
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                writer.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
