@@ -16,7 +16,7 @@ public class ThirdIOMain {
 
     public static void main(String[] args) throws IOException {
         NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades = TreeMapRunner.createGrades();
-        readFile(grades);
+        writeFile(grades);
 
 //        FileReader reader = new FileReader(FILE_NAME);
         BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
@@ -31,7 +31,7 @@ public class ThirdIOMain {
         }
     }
 
-    private static void readFile(NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades) throws IOException {
+    private static void writeFile(NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades) throws IOException {
 
         try (FileWriter writer = new FileWriter(FILE_NAME)) {
 
